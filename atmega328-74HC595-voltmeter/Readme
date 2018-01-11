@@ -1,0 +1,17 @@
+example  connections 74hc595 led tube module for avr atmega328/168
+
+depends:
+gcc-avr
+gdb-avr
+avrdude
+avr-libc
+
+compile:
+avr-gcc -mmcu=atmega168 -Wall -g -Os -Werror -lm -mcall-prologues -std=c99 -o voltmeter.obj voltmeter-328-led-tube.c; avr-objcopy -O ihex voltmeter.obj voltmeter.hex
+flash:
+avrdude -C avrdude.conf -q -p atmega328p -c arduino -P /dev/ttyUSB0 -b 57600 -D -U flash:w:voltmeter.hex:i
+
+connections mcu led:
+PD5 DIO
+PD6 RCLK
+PD7 SCLK
