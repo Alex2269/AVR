@@ -44,8 +44,8 @@ void sin_init(uint16_t i)
 void pwm(uint16_t a, uint16_t b, uint16_t c, uint16_t d, uint16_t e)
 {
    uint16_t i;
-   DDRB=0b00111111; // portB как выход
-   DDRD=0b11111100; // portD как выход  
+   DDRB=0b00111111; // DDRx: 0 -pins to input
+   DDRD=0b11111100; // DDRx: 1 -pins to output
    for(i= 0; i < sinus_points; i+=step)
    {
 
