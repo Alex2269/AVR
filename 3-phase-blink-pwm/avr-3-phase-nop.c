@@ -12,8 +12,7 @@ float PI = 3.14;
 float tmp = 0;
 int delay = 1;
 
-
-void sine_gen();
+void sine_gen(void);
 
 void delay_us(uint16_t us) //функция задержки
 {
@@ -89,7 +88,7 @@ void pwm(uint16_t a, uint16_t b, uint16_t c)
    }
 }
 
-void sine_gen()
+void sine_gen(void)
 {
   uint16_t i,a,b,c;
 
